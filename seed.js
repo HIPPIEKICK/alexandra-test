@@ -17,7 +17,7 @@ const seedDatabase = async () => {
 };
 
 seedDatabase().then(() => {
-  mongoose.connection.close();
+  setTimeout(() => {mongoose.connection.close()}, 1500);
 });
 //Seeding a database is the process of populating it with initial data.//
 //This is especially useful in development and testing environments, where you need a predictable and consistent set of data to work with.//
