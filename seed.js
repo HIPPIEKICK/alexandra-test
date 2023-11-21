@@ -8,21 +8,17 @@ mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 const seedDatabase = async () => {
   await Book.deleteMany({}); // Clears the existing books collection
 
-  await booksData.forEach(async (bookData) => {
+  booksData.forEach(async (bookData) => {
     const newBook = new Book(bookData);
     await newBook.save();
   });
-
+  
   console.log('Database has been seeded!');
-  setTimeout(() => {mongoose.connection.close()}, 1500)
-  console.log("closed")
 };
 
-seedDatabase()
-
-// seedDatabase().then(() => {
-//   setTimeout(() => {mongoose.connection.close()}, 1500)
-// });
+seedDatabase().then(() => {
+  setTimeout(() => { mongoose.connection.close() }, 1500)
+});
 //Seeding a database is the process of populating it with initial data.//
 //This is especially useful in development and testing environments, where you need a predictable and consistent set of data to work with.//
  //Seeding is typically done when the database is first set up, or when it's reset or refreshed. //
