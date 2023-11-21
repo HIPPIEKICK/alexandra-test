@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
-import Book from './models/book'; // Adjust the path as needed
-import booksData from './data/books.json'; // Adjust the path as needed
+const mongoose = require('mongoose');
+const Book = require('./models/book'); // Adjust the path as needed
+const booksData = require('./data/books.json'); // Adjust the path as needed
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/project-mongo";
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
