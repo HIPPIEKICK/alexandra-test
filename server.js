@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const listEndpoints = require('express-list-endpoints');
-import Book from './models/book'; // Adjust the path to your Book model
+const Book = require('./models/book'); // Adjust the path to your Book model
 
 dotenv.config()
 
