@@ -1,8 +1,8 @@
-const express = require("express");
-import cors from "cors";
-import mongoose from "mongoose";
-import dotenv from 'dotenv';
-import listEndpoints from 'express-list-endpoints';
+const express = require("express")
+const cors = require("cors");
+const mongoose = require("mongoose");
+const dotenv = require('dotenv');
+const listEndpoints = require('express-list-endpoints');
 import Book from './models/book'; // Adjust the path to your Book model
 
 dotenv.config()
